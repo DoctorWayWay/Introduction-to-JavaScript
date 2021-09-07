@@ -188,7 +188,7 @@ function game(user, computer) {
     return "Please capitalize your word.";
   }
 }
-console.log(game("Rock", "Scissors"));
+console.log("4:", game("Rock", "Scissors"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -197,14 +197,14 @@ console.log(game("Rock", "Scissors"));
 /*
 Using the miles function below do the following:
 1. Receive a number of kilometers
-2. Convert the number of kiolmeters received to miles
+2. Convert the number of kilometers received to miles
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/) {
-  /*add your code here*/
+function miles(km) {
+  return km / 1.609;
 }
-
+console.log("5a:", miles(7));
 //Task 5b - Feet to CM
 /*
 Using the feet function below do the following:
@@ -213,9 +213,10 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/) {
-  /*add your code here*/
+function feet(cm) {
+  return cm / 30.48;
 }
+console.log("5b:", feet(100));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
