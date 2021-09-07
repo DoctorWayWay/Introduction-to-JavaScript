@@ -128,6 +128,8 @@ function hungryDog(age, weight) {
     return weight * 0.05;
   } else if (age >= 2 / 12 && age <= 4 / 12) {
     return weight * 0.1;
+  } else {
+    return "Input denied";
   }
 }
 console.log("3:", hungryDog(1, 15));
@@ -154,8 +156,39 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 */
 
 function game(user, computer) {
-  /*add your code here*/
+  // Computer's random choice
+  // computer = Math.floor(Math.random() * 3);
+  // if (computer === 0) {
+  //   computer = "Rock";
+  // } else if (computer === 1) {
+  //   computer = "Paper";
+  // } else if (computer === 2) {
+  //   computer = "Scissors";
+  // }
+  // Below is how the match ups will work
+  if (
+    (user === "Rock" && computer === "Scissors") ||
+    (user === "Paper" && computer === "Rock") ||
+    (user === "Scissors" && computer === "Paper")
+  ) {
+    return "You win!";
+  } else if (
+    (user === "Rock" && computer === "Rock") ||
+    (user === "Paper" && computer === "Paper") ||
+    (user === "Scissors" && computer === "Scissors")
+  ) {
+    return "It's a tie!";
+  } else if (
+    (user === "Rock" && computer === "Paper") ||
+    (user === "Paper" && computer === "Scissors") ||
+    (user === "Scissors" && computer === "Rock")
+  ) {
+    return "You lose!";
+  } else {
+    return "Please capitalize your word.";
+  }
 }
+console.log(game("Rock", "Scissors"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
