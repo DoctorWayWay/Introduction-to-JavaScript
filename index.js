@@ -113,26 +113,41 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */
 
-function hungryDog(age, weight) {
-  if (age >= 1 && weight >= 16) {
-    return weight * 0.02;
-  } else if (age >= 1 && weight <= 15 && weight >= 11) {
-    return weight * 0.03;
-  } else if (age >= 1 && weight <= 10 && weight >= 6) {
-    return weight * 0.04;
-  } else if (age >= 1 && weight <= 5) {
-    return weight * 0.05;
-  } else if (age >= 7 / 12 && age <= 1) {
-    return weight * 0.04;
-  } else if (age >= 4 / 12 && age <= 7 / 12) {
-    return weight * 0.05;
-  } else if (age >= 2 / 12 && age <= 4 / 12) {
-    return weight * 0.1;
+function hungryDog(weight, age) {
+  // Check if Adult
+  let isAdult;
+  if (age >= 1) {
+    isAdult = true;
   } else {
-    return "Input denied";
+    isAdult = false;
+  }
+  // Food calc for Adult
+  if (isAdult === true) {
+    if (weight <= 5) {
+      return weight * 0.05;
+    } else if (weight >= 6 && weight <= 10) {
+      return weight * 0.04;
+    } else if (weight >= 11 && weight <= 15) {
+      return weight * 0.03;
+    } else if (weight > 15) {
+      return weight * 0.02;
+    } else {
+      return "ERROR! Invalid input.";
+    }
+  } else {
+    // Food calc for Puppy
+    if (age >= 0.167 && age < 0.333) {
+      return weight * 0.1;
+    } else if (age >= 0.333 && age < 0.583) {
+      return weight * 0.05;
+    } else if (age >= 0.583 && age < 1) {
+      return weight * 0.04;
+    } else {
+      return "ERROR! Invalid input.";
+    }
   }
 }
-console.log("3:", hungryDog(1, 15));
+console.log("3:", hungryDog(4, 8 / 12));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -228,9 +243,14 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/) {
-  /*add your code here*/
+function annoyingSong(startingBottles) {
+  for (let bottles = startingBottles; bottles > 0; bottles = bottles - 1) {
+    return `${bottles} bottles of soda on the wall, ${bottles} bottles of soda, take one down pass it around ${
+      bottles - 1
+    } bottles of soda on the wall`;
+  }
 }
+console.log(annoyingSong(3));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
