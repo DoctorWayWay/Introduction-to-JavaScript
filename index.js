@@ -182,28 +182,28 @@ function game(user, computer) {
   // }
   // Below is how the match ups will work
   if (
-    (user === "Rock" && computer === "Scissors") ||
-    (user === "Paper" && computer === "Rock") ||
-    (user === "Scissors" && computer === "Paper")
+    (user === "rock" && computer === "scissors") ||
+    (user === "paper" && computer === "rock") ||
+    (user === "scissors" && computer === "paper")
   ) {
-    return "You win!";
+    return "you win!";
   } else if (
-    (user === "Rock" && computer === "Rock") ||
-    (user === "Paper" && computer === "Paper") ||
-    (user === "Scissors" && computer === "Scissors")
+    (user === "rock" && computer === "rock") ||
+    (user === "paper" && computer === "paper") ||
+    (user === "scissors" && computer === "scissors")
   ) {
-    return "It's a tie!";
+    return "it's a tie";
   } else if (
-    (user === "Rock" && computer === "Paper") ||
-    (user === "Paper" && computer === "Scissors") ||
-    (user === "Scissors" && computer === "Rock")
+    (user === "rock" && computer === "paper") ||
+    (user === "paper" && computer === "scissors") ||
+    (user === "scissors" && computer === "rock")
   ) {
-    return "You lose!";
+    return "you lose!";
   } else {
-    return "Please capitalize your word.";
+    return "Please write your words in lower-case.";
   }
 }
-console.log("4:", game("Rock", "Scissors"));
+console.log("4:", game("rock", "scissors"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -217,7 +217,7 @@ Using the miles function below do the following:
 */
 
 function miles(km) {
-  return km / 1.609;
+  return km * 0.621371;
 }
 console.log("5a:", miles(7));
 //Task 5b - Feet to CM
@@ -244,13 +244,19 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(startingBottles) {
+  let annoyingSentence;
   for (let bottles = startingBottles; bottles > 0; bottles = bottles - 1) {
-    return `${bottles} bottles of soda on the wall, ${bottles} bottles of soda, take one down pass it around ${
-      bottles - 1
-    } bottles of soda on the wall`;
+    annoyingSentence =
+      bottles +
+      " bottles of soda on the wall, " +
+      bottles +
+      " bottles of soda, take one down pass it around " +
+      (bottles - 1) +
+      " bottles of soda on the wall";
+    return annoyingSentence;
   }
 }
-console.log(annoyingSong(3));
+annoyingSong(3);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
